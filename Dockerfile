@@ -14,7 +14,7 @@ RUN sed -i "s#deb http://deb.debian.org/debian buster main#deb http://deb.debian
   && wget -q -O - "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" | tar -xj -C /opt \
   && ln -s /opt/firefox/firefox /usr/bin/ \
   && wget -O '/tmp/requirements.txt' https://raw.githubusercontent.com/InstaPy/instapy-docker/master/requirements.txt \
-  && pip install --no-cache-dir -U -r /tmp/requirements.txt \
+  && pip install --no-cache-dir -I https://github.com/InstaPy/InstaPy/zipball/dev \
   && apt-get purge -y --auto-remove \
   gcc \
   g++ \
